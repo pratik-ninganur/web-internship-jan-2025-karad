@@ -1,0 +1,12 @@
+.MyStyle{
+    background-color: aqua;
+    color: red;
+    height: 100px; 
+    width: 200px;
+    border: 1px solid black;
+}
+.SecondStyle{
+font-weight: bolder;font-style: oblique;
+background-color: pink;
+border: 1px solid red;
+}
