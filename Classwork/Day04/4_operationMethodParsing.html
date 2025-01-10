@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo-4</title>
+</head>
+<body>
+    <script>
+        var x=10;
+        var res=x+10;
+        console.log(res);//20
+
+        var res=x+"abcd";
+        console.log(res);//10abcd
+
+        var res=x+"20";
+        console.log(res);
+
+        var res=x+true;
+        console.log(res);
+
+        
+        var res=x+false;
+        console.log(res);
+
+        var res=x+null;
+        console.log(res);
+
+        var res=x+undefined;
+        console.log(res);
+        //not a number = NaN
+
+        var today=new Date();
+        console.log(today);
+        console.log(today.toUTCString());
+        console.log(today.getDate());
+        console.log(today.getDay());
+        console.log(today.getMonth());
+        console.log(today.getFullYear());
+        console.log("sssss");
+        console.log(today.getTime());
+        console.log(today.getHours());
+        console.log(today.getMinutes()); 
+        console.log(today.getSeconds());
+        console.log(today.getMilliseconds());
+        
+
+        // parsing
+
+        var str='200';
+
+        var n1=parseInt(str);
+        console.log(n1);
+
+        var n1=parseFloat(str);
+        console.log(n1);
+
+        var MyDate=Date.parse("2025-01-19");
+        console.log(MyDate);
+
+        
+       
+
+    </script>
+    
+</body>
+</html>

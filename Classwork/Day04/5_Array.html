@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let  courses=['BA',"BSC","BTech"];
+        console.log(typeof(courses));
+        console.log(courses.length);
+        console.log(courses.toString());
+        console.log(courses.join("|").toString());
+        console.log(courses[2]);
+        let  courses2=['ME',"MCom","MSC","MTech"];
+        let allCourses= courses.concat(courses2);
+        console.log(allCourses);
+        allCourses.push("PHD");
+        console.log(allCourses);
+
+    for(let i=0;i<allCourses.length;i++)
+    {
+        console.log(allCourses[i]);
+    }
+
+    console.log("for of loop");
+    const itrator=allCourses.values();
+    for(const e of itrator)
+    {
+        console.log(e);
+    }
+
+    
+    for(const e of allCourses)
+    {
+        console.log(e);
+    }
+
+    console.log(allCourses.slice(0,3));
+    console.log(allCourses.slice(0,-3));
+    delete allCourses;
+    console.log(allCourses);
+    
+    
+        
+        
+
+
+    </script>
+    
+</body>
+</html>
