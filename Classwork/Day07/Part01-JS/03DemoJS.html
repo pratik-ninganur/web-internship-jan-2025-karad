@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Demo Dynamic UI</title>
+</head>
+<body>
+    <br><br><br><br>
+ <center>
+    <table  style="width: 600px; border:1px solid black;" border="1">
+        <tr>
+            <td>
+                <table style="width: 400px; border:1px solid black;text-align: center;" border="1" id="myTable">
+                    <tr>
+                        <th>Name</th>
+                        <th>Address</th>
+                    </tr>
+                  
+                </table>   
+            </td>
+            <td style="text-align: center; vertical-align: top;width:200px">
+                    <input type="button" value="Add" onclick="AddRow()">
+            </td>
+        </tr>
+    </table>
+ 
+ </center>
+
+ <script>
+    function AddRow()
+    {
+        var refToMyTable = document.getElementById("myTable");
+        var row = `<tr>
+                    <td>
+                        <input type="text">    
+                    </td>
+                    <td>
+                        <input type="text">    
+                    </td>
+                  </tr>`;
+        refToMyTable.innerHTML =   refToMyTable.innerHTML +      row;
+    }
+ </script>
+</body>
+</html>

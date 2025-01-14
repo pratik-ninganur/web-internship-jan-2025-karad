@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Demo Dynamic UI</title>
+</head>
+<body>
+    <br><br><br><br>
+ <center>
+    <table  style="width: 600px; border:1px solid black;" border="1">
+        <tr>
+            <td style="vertical-align: top;">
+                <table style="width: 400px; border:1px solid black;text-align: center;" border="1" id="myTable">
+                    <tr>
+                        <th>Name</th>
+                        <th>Address</th>
+                    </tr>
+                  
+                </table>   
+            </td>
+            <td style="text-align: center; vertical-align: top;width:200px">
+                   <table>
+                        <tr>
+                            <td>Name: </td>
+                            <td>
+                                <input type="text"
+                                        id="txtName">
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>Address: </td>
+                            <td>
+                                <input type="text" id="txtAddress">
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="button" value="Add" onclick="AddRow()">
+                            </td>
+                        </tr>
+                   </table>
+            </td>
+        </tr>
+    </table>
+
+
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+
+    </table>
+ 
+ </center>
+
+ <script>
+    function AddRow()
+    {
+        var refToTxtName = document.getElementById("txtName").value;
+        console.log(refToTxtName);
+        var refToTxtAddress = document.getElementById("txtAddress").value;
+        console.log(refToTxtAddress);
+
+        window.localStorage.setItem("task",refToTxtName);
+       window.localStorage.setItem("Address",refToTxtAddress);
+    
+
+
+        var refToMyTable = document.getElementById("myTable");
+        var row = `<tr>
+                    <td>`+
+                        refToTxtName
+                    +`</td>
+                    <td>`+
+                        refToTxtAddress
+                    +`</td>
+                  </tr>`;
+        refToMyTable.innerHTML =   refToMyTable.innerHTML +      row;
+    }
+
+
+
+ </script>
+</body>
+</html>

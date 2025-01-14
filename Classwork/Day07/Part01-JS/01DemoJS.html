@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>Demo</title>
+       
+    </head>
+    <body id="myBody">
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td>
+                    <input type="text" id="txtName">
+                </td>
+                <td>
+                    <div id="myDivForNameRelatedMessage" style="color:red">
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Address:</td>
+                <td>
+                    <input type="text" id="txtAddress">
+                </td>
+                <td>
+                    <div id="myDivForAddressRelatedMessage" style="color:red">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">
+                    <input type="button" value="Register" onclick="DoRegister()">
+                </td>
+            </tr>
+        </table>
+        <br>
+        <div id="divMsgForName"  style="color:green;">
+        </div>
+        <div id="divMsgForAddress"  style="color:green;">
+        </div>
+       
+        <br>
+      
+        <!-- <script src="https://bonaventuresystems.com/validation.js">
+        </script> -->
+        <script src="validation.min.js">
+        </script>
+        <script>
+            function DoRegister()
+            {
+                //debugger;
+              ValidateEmpty("txtName","myDivForNameRelatedMessage","divMsgForName", "Name is required.");
+
+              ValidateEmpty("txtAddress","myDivForAddressRelatedMessage",
+              "divMsgForAddress", "Address is required.")
+             
+            }
+        </script>
+    </body>
+</html>

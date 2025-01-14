@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Demo</title>
+</head>
+<body>
+    <script>
+        //-------------------------------------------------------------
+        
+        //Writing Normal Function in JS
+        // function SayHi()
+        // {
+        //     console.log("Hi");
+        // }
+
+        // SayHi();
+
+        //-------------------------------------------------------------
+
+
+
+
+        //-------------------------------------------------------------
+        
+        //Calling Normal Function - returnung simple value in JS
+
+        // function SayHi()
+        // {
+        //    return "Hi";
+        // }
+
+        // var result = SayHi();
+        // console.log(result);
+
+        //-------------------------------------------------------------
+
+
+        //-------------------------------------------------------------
+        
+        //Calling Function in Function in JS
+
+        // function SayHi()
+        // {
+        //    return "Hi";
+        // }
+
+        // function SayBye()
+        // {
+        //    return "Bye";
+        // }
+
+        // function SaySomething()
+        // {
+        //     if(10>20)
+        //     {
+        //         var result =   SayHi();
+        //         console.log(result);
+        //     }
+        //     else
+        //     {
+        //         var result =  SayBye();
+        //         console.log(result);
+        //     }
+        // }
+
+        // SaySomething();
+        //-------------------------------------------------------------
+
+
+         //-------------------------------------------------------------
+        
+        //Calling Function passed as a parameter in another Function 
+
+        // function SayHi()
+        // {
+        //    return "Hi";
+        // }
+
+        // function SayBye()
+        // {
+        //    return "Bye";
+        // }
+
+        // function SaySomething(f1,f2)
+        // {
+        //     if(10>20)
+        //     {
+        //         var result =   f1();
+        //         console.log(result);
+        //     }
+        //     else
+        //     {
+        //         var result =  f2();
+        //         console.log(result);
+        //     }
+        // }
+
+        // debugger;
+        // SaySomething(SayHi, SayBye)
+        //-------------------------------------------------------------
+
+          //-------------------------------------------------------------
+        
+        //A variable can hold a function as an object.. 
+
+        // function SayHi ()
+        //             {
+        //             console.log("Hi");
+        //             };
+       
+        //Above code is same as below code .. 
+        // var SayHi =  function ()
+        //             {
+        //             console.log("Hi");
+        //             };
+        
+        // debugger;
+        // SayHi();
+        
+        //-------------------------------------------------------------
+
+
+        var Person = function(no, name, address)
+                        {
+                            this.No = no;
+                            this.Name = name;
+                            this.Address = address;
+                            this.Print = function()
+                                            {
+                                                console.log(this.No + this.Name + this.Address);
+                                            }
+                        };
+
+        debugger;
+        var p1 = new Person(10, "Sachin", "Mumbai");
+        p1.Print();
+
+        var p2 = new Person(20, "Chetan", "Chennai");
+        p2.Print();
+
+    </script>
+</body>
+</html>

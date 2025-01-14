@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Demo Dynamic UI</title>
+</head>
+<body>
+   <input type="text" id="taskId">
+   <input type="button" value="Add Task" onclick="AddRow()">
+   <hr>
+
+   <table id="MyTable"></table>
+
+   <script>
+    function AddRow(){
+    var refToTask = document.getElementById("taskId").value;
+
+    window.localStorage.setItem("task", refToTask);
+
+    window.localStorage.getItem("task");
+    
+    var refToMyTable = document.getElementById("MyTable");
+        var row = `<tr>
+                    <td>`+
+                        refToTask
+                    +`</td>
+                    <td>`+
+                        `<input type="button" value="Delete" onclick="deleteRow(this)">`+
+                        `</td></tr>`;
+        refToMyTable.innerHTML =   refToMyTable.innerHTML +      row;
+};
+
+function deleteRow(button){
+    console.log("INside Delete");  
+    var row = button.parentNode.parentNode;
+    row.parentNode.removeChild(row);
+}
+   </script>
+</body>
+</html>

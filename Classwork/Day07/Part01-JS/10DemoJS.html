@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var days = ["Mon", "Tues", "Wed"];
+        var Nos = [10,20,30,40,50]; 
+
+        var mixed = [
+                        765, 
+                        "Anything",
+                        ...days,
+                        88,
+                        true,
+                        ...Nos
+                    ];
+        //console.log(mixed);
+
+        for(i=0;i<mixed.length; i++)
+        {
+            console.log(mixed[i]);
+        }
+    </script>    
+</body>
+</html>

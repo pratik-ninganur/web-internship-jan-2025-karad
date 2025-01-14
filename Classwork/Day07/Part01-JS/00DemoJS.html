@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Demo JS</title>
+</head>
+<body>
+    <script>
+        var counter = 10;
+        //var pi = 3.14;
+        const pi = 3.14;
+
+        console.log("Before DoSomething Call Counter = " + counter);
+
+        function DoSomething()
+        {
+            //pi = 20;
+            console.log("pi = " + pi );
+
+            let counter = 19;
+            counter = counter + 100;
+            console.log("Inside DoSomething Counter = " + counter);
+
+            // var counter = 19;
+            // counter = counter + 100;
+            // console.log("Inside DoSomething Counter = " + counter);
+
+            // console.log(name);
+            // console.log(setInterval);
+        }
+
+        DoSomething()
+        console.log("After DoSomething Call Counter = " + counter);
+    </script>
+</body>
+</html>
