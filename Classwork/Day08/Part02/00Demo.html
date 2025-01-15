@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var helper = new XMLHttpRequest();
+        helper.onreadystatechange = function(){};
+        helper.setRequestHeader("contentType","application/xml");
+
+        helper.open("POST", 
+                    "http://_____/Register");
+        helper.send(`{UserName: 'mahesh', 
+                     Password: 'mahesh@567'}`);
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dashboard</title>
+</head>
+<body onload="GetData()">
+    <h1>This is Dashboard</h1>
+    <!-- <input type="button" value="Get Data"
+    onclick="GetData()"> -->
+    <div id="content"></div> <br><br>
+    <div id="content1"></div>
+    <script>
+        function GetData()
+        {
+            var refTocontent = 
+            document.getElementById("content")
+
+            var refTocontent1 = 
+            document.getElementById("content1")
+
+            var FName = window.localStorage.getItem("FName") ;
+           
+            var hb = window.localStorage.getItem("Hobby") ;
+
+
+            var SFName = window.sessionStorage.getItem("FName") ;
+           
+            var shb = window.sessionStorage.getItem("Hobby") ;
+
+            refTocontent.innerText = 
+            refTocontent.innerText + 
+            "Local Storage Contents are " + FName + hb;
+
+            refTocontent1.innerText = 
+            refTocontent1.innerText + 
+            "Session Storage Contents are " + SFName + shb;
+            
+        }
+    </script>
+</body>
+</html>

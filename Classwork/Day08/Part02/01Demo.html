@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Enter Book Title / Author</h1>
+    <input type="text" id="txtSearch"> 
+    <input type="button" value="Search My Book" onclick="Search();">
+    <hr>
+    <div id="container">
+       
+    </div>
+    </div>
+    <script>
+        function Search(){
+
+            var url = "https://www.googleapis.com/books/v1/volumes?q=";
+
+            var refToSearchTextBox = 
+                document.getElementById("txtSearch");
+            var refToContainer = 
+                document.getElementById("container");
+
+
+            url = url + refToSearchTextBox.value;
+
+            var helper = new XMLHttpRequest();
+            helper.onreadystatechange = ()=>{
+                if(helper.readyState == 4 &&
+                    helper.status == 200)
+                    {
+                        var textData=  
+                            helper.responseText;
+
+                        var jsonData = 
+                            JSON.parse(textData);
+
+                        debugger;
+                        refToContainer.innerHTML ="";
+
+                        for(i=0;i<jsonData.items.length; i++)
+                        {
+                            var book = 
+                                jsonData.items[i];
+
+                            debugger;
+                            var title = 
+                                book.volumeInfo.title;
+                            
+                                var author = 
+                            book.volumeInfo.authors[0];
+
+                            var imageURL = book.volumeInfo.imageLinks.thumbnail;
+
+                            var content = 
+                          ` <hr>
+                            <h2>${title}</h2>
+                            <h3>${author}</h3>
+                            <img style="height:300px; width: 300px; border: 3px solid black" 
+                            src="${imageURL}">
+                            <hr>`
+
+                            refToContainer.innerHTML =
+                            refToContainer.innerHTML + content;
+                        }
+                    }
+            }
+            helper.open("GET",url);
+            helper.send();
+
+        }
+    </script>
+</body>
+</html>

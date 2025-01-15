@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Main</title>
+</head>
+<body>
+    <h1>First Page</h1>
+    Name: <input type="text" id="txtName"><br>
+    
+    Hobbies: <input type="text" id="txtHb"><br>
+
+    <input type="button" value="Store N Go To Second Page" onclick="Navigate()">
+
+    <script>
+        function Navigate()
+        {
+            var refTotxtName = document.getElementById("txtName");
+
+            var refTotxtHb = document.getElementById("txtHb");
+
+            window.localStorage.setItem("FName", refTotxtName.value);
+
+            window.localStorage.setItem("Hobby", refTotxtHb.value);
+
+
+            window.sessionStorage.setItem("FName", refTotxtName.value);
+
+            window.sessionStorage.setItem("Hobby", refTotxtHb.value);
+
+            window.location.href="Dashboard.html"
+        }
+    </script>
+</body>
+</html>
