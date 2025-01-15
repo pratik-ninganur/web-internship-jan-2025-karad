@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var Person = {
+                        Name: "Mahesh",
+                        Address: "Pune",
+                        Print: function(){
+                            console.log(this.Name + this.Address);
+                        }
+                     };
+
+        var p1 = Person;
+        p1.Name = "Nilesh";
+        p1.Print();
+
+        var p2 = Person;
+        p2.Print();
+        p1.Print();
+       debugger;
+
+    </script>
+</body>
+</html>

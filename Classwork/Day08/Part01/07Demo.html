@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Demo JSON</title>
+</head>
+<body>
+    <input type="button" value="Click Me" onclick="GenerateUI()">
+    <table border="1" id="myTable" style="width:600px">
+        
+    </table>    
+   
+    <script>
+        function GenerateUI()
+        {
+            // debugger;
+
+            var helper = new XMLHttpRequest(); 
+            //readystate = 0 : New Object Created
+           
+            helper.onreadystatechange = function()
+            {
+               //debugger;
+                console.log(helper.readyState);
+
+                if(helper.readyState == 4 &&
+                    helper.status == 200)
+                    {
+                        debugger;
+                        var responseReceived = 
+                            JSON.parse(helper.responseText);
+                       
+            var feeds = responseReceived.data;
+        
+            var refmyTable = 
+                document.getElementById("myTable");
+
+            for(i=0;i<feeds.length; i++)
+            {
+                var feed= feeds[i];
+                
+                var row = `<tr>
+                                <td>`+
+                                    feed.first_name 
+                                +`</td>
+                                <td>`+
+                                    feed.last_name 
+                                +`</td>
+                                <td>`+
+                                    feed.email 
+                                +`</td>
+                                <td>`+
+                                    `<img src="`
+                                    + feed.avatar +
+                                    `"style="height:100px; width: 100px">`
+                                +`</td>
+                            </tr>`;
+                refmyTable.innerHTML =    
+                        refmyTable.innerHTML+ row; 
+            }
+          }
+        };
+            
+            helper.open("GET",
+                        "https://reqres.in/api/users");
+            //readystate = 1: New Packet Created
+
+            helper.send();
+            //readystate = 2 : Packet is sent over n/w
+
+            //readystate = 3 : waiting for reply...
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var Person = {
+                        Print: function(){
+                            console.log(this.Name + this.Address);
+                        }
+                     };
+
+        var p1 = {Name: "Mahesh", Address: "Pune", Print: undefined}
+        p1.Print =  Person.Print.bind(p1);
+        p1.Print();
+       
+        var p2 = {Name: "Nilesh", Address: "Chennai", anything: undefined}
+        p2.anything =  Person.Print.bind(p2);
+        p2.anything();
+       
+        var p3 = {Name: "Sameer", Address: "Kolkata"}
+        var WrapperMethod =  Person.Print.bind(p3);
+        WrapperMethod();
+
+    </script>
+</body>
+</html>

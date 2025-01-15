@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var Person = {
+                        Name: "Mahesh",
+                        Address: "Pune",
+                        Print: function(){
+                            console.log(this.Name + this.Address);
+                        }
+                     };
+        
+        Person.Name = "Nilesh";
+        Person.Print();
+
+
+        var Employee = {};
+        Employee.__proto__ = Person;
+        Employee.Name = "Sameer";
+        Employee.Print();
+       console.log(Employee.toString());
+       debugger;
+
+    </script>
+</body>
+</html>

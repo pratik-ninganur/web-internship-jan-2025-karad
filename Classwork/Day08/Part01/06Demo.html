@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var Person = 
+        {
+            Name: "A", 
+            Address: "B", 
+            Print: function(){
+            console.log(this.Name + this.Address);
+        }};
+
+        // var p1 = Person;
+        // var p2 = Person;
+
+        var p1 = {};
+        p1.__proto__= Person;
+        p1.Name = "C";
+        p1.Address = "D";
+        p1.Print();
+
+
+        var p2 = {};
+        p2.__proto__= Person;
+        p2.Name = "E";
+        p2.Address = "F";
+        p2.Print();
+        p1.Print();
+
+        // Person.Print();
+
+
+        // var Person = {Print: function(){
+        //     console.log(this.Name + this.Address);
+        // }};
+
+        // var p1 = {Name: "A", Address: "B"};
+        // p1.__proto__= Person;
+        // p1.Print();
+
+
+        // var p2 = {Name: "B", Address: "C"};
+        // p2.__proto__= Person;
+        // p2.Print();
+       
+        // Person.Print();
+    </script>    
+</body>
+</html>

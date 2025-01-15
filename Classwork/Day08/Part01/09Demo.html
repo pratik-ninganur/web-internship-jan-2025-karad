@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txtRecipe"> <br>
+    <input type="button" value="Search" onclick="GetData()">
+    <hr>
+    <div id="myDiv" style="width:100%; border: 5px solid black;">
+        
+       
+        
+    </div>
+
+    <script>
+        function GetData()
+        {
+            var helper = new XMLHttpRequest();
+            helper.onreadystatechange = function(){
+                if(helper.readyState == 4 && 
+                    helper.status == 200)
+                    {
+                        
+                        var responseReceived = JSON.parse(helper.responseText);
+
+                        var refTomyDiv = 
+                        document.getElementById("myDiv");
+
+                        refTomyDiv.innerHTML = "";
+                        
+                        refTomyDiv.innerHTML = 
+                        refTomyDiv.innerHTML  + 
+                            `<div style="width:100%; border: 2px solid greenyellow;margin: 5px">
+                                ${responseReceived.meals[0].strMeal} 
+                                <br/>
+                                ${responseReceived.meals[0].strCategory} 
+                                <br/>
+                                ${responseReceived.meals[0].strInstructions} 
+                                <br/>
+                                <img src="${responseReceived.meals[0].strMealThumb}" style="height:200px;width:200px">
+                                <br/>
+
+                            </div>`
+                        debugger;
+                    }
+            };
+
+            var refToTxt = document.getElementById("txtRecipe");
+
+            var serachItem = refToTxt.value;
+
+            helper.open("GET", "https://www.themealdb.com/api/json/v1/1/search.php?s=" + serachItem);
+            helper.send();
+        }
+    </script>
+</body>
+</html>

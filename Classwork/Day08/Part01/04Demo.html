@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person
+        {
+            constructor(name, address)
+            {
+                this.Name = name;
+                this.Address = address;
+            }
+
+            Print()
+            {
+                console.log(this.Name + this.Address);
+            }
+        }
+
+        
+
+        var p1 = new Person("Mahesh","Pune");
+        p1.Print();
+
+        var p2 = new Person("Nilesh", "Delhi");
+        p2.Print();
+    </script>    
+</body>
+</html>
