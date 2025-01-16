@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" style="height: 400px;width:100%;border: 5px solid black">
+        Your browser does not support HTML 5..
+        Pls Upgrade!
+    </canvas>
+    <br>
+    <input type="button" value="Draw" 
+           onclick="Draw()">
+
+    <script>
+
+      var x = 0;
+      var y=0;
+      var x1=0;
+      var y1 = 0;
+
+      function Draw()
+      {
+        var refToCanvas = 
+            document.getElementById("myCanvas");
+
+        var contextOf2Axis = 
+            refToCanvas.getContext('2d');
+
+        contextOf2Axis.moveTo(x,y)
+        x1 = x + 1;
+        y1 = Math.floor(Math.random()*100)
+
+        contextOf2Axis.lineTo(x1,y1);
+
+        contextOf2Axis.stroke();
+
+        x = x1;
+        y = y1;
+      }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="Find Me" onclick="FindMe()">
+    <script>
+      
+      function FindMe()
+      {
+        navigator.geolocation.getCurrentPosition(OnSuccessCallMe, OnFailureCallMe);
+        
+      }
+
+      function OnSuccessCallMe(result)
+      {
+//debugger;
+alert(result.coords.latitude)
+alert(result.coords.longitude)
+      }
+
+      function OnFailureCallMe(error){
+//debugger;
+      }
+
+    </script>
+</body>
+</html>

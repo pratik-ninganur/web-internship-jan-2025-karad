@@ -1,0 +1,1 @@
+https://www.latlong.net/c/?lat=17.2835998&long=74.180756

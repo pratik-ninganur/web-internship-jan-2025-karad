@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Demo Flex</title>
+</head>
+<body onload="GetData()">
+    <div id="myContainer" style="background-color: gray;padding: 5px; display: flex;flex-wrap: wrap;justify-content: space-around">
+        
+       
+    </div>
+    
+    <script>
+        function GetData()
+        {
+            var helper= new XMLHttpRequest();
+            helper.onreadystatechange = ()=>
+            {
+                if(helper.readyState == 4 && helper.status == 200)
+                {
+                    var refToContainer = 
+                    document.getElementById("myContainer");
+                    console.log("* "+helper.responseText);
+                    var jsonobject = JSON.parse(helper.responseText);
+                    console.log("** "+jsonobject);
+                    var users = jsonobject.data;
+                    console.log("*** "+users);
+
+                    users.map(user=>{
+                        //debugger;
+                        refToContainer.innerHTML =
+                        refToContainer.innerHTML + 
+                        `<div id="myContent" style="width:200px;height:200px;background-color: rgb(150, 100, 255);text-align: center;">
+                        <img src="${user.avatar}" style="width: 100px;height: 100px;padding: 2px;border: 1px solid black;">
+                        <h2>${user.first_name} ${user.last_name}</h2>
+                    </div>`;
+                    });
+
+                }
+            };
+            helper.open("GET", "https://reqres.in/api/users/");
+            helper.send();
+        }
+    </script>
+</body>
+</html>
