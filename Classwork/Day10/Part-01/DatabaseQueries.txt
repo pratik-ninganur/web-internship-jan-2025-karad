@@ -1,0 +1,21 @@
+create database myDatabase
+use myDatabase
+
+create table Emp(No int primary key, 
+				 Name varchar(50),
+				 Address varchar(50));
+                 
+insert into Emp values(1, 'Sachin', 'Pune');
+insert into Emp values(2, 'Nilesh', 'Mumbai');
+insert into Emp values(3, 'Sameer', 'Chennai');
+insert into Emp values(4, 'Amit', 'Delhi');
+insert into Emp values(5, 'Nitin', 'Panji');
+
+update Emp
+set Address = 'Kolkata'
+where No = 3
+
+select * from Emp
+
+
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Client</title>
+</head>
+<body>
+    <input type="button" value="Get Data From Node Server" onclick="GetData()"> <br>
+    <hr>
+    <table id="myTable" border="1" style="width: 300px">    
+        <tr>
+            <th>No</th>
+            <th>Name</th>
+            <th>Address</th>
+        </tr>
+           
+
+    </table>
+
+    <script>
+        function GetData()
+        {
+            var refToTable = 
+                document.getElementById("myTable");
+
+            var helper =   new XMLHttpRequest();
+           
+            helper.onreadystatechange = ()=>{
+                if(helper.readyState == 4 && 
+                    helper.status == 200)
+                    {
+                        var data = JSON.parse(helper.responseText);
+
+                        // debugger;
+                        for(i=0;i<data.length;i++)
+                        {
+                            var record = data[i];
+                            var row = 
+                    ` <tr>
+                        <td>
+                            ${record.No}      
+                        </td>
+                        <td>
+                            ${record.Name}      
+                        </td>
+                        <td>
+                            ${record.Address}      
+                        </td>
+                    </tr>`;
+                    refToTable.innerHTML =
+                        refToTable.innerHTML + row;
+                        }
+                      
+                    }
+            }
+            helper.open("GET", 
+                        "http://127.0.0.1:9898/emps");
+            helper.send();
+        }
+
+    </script>
+</body>
+</html>
